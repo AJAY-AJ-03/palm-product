@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palm Leaf Basket Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        /* Add fade-in animation */
+        .product-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card img {
+            object-fit: cover;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Palm Products</h1>
+    </header>
+
+    <!-- Product Section -->
+    <div class="container py-5">
+        <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-lg-4 col-md-6 product-card">
+                <div class="card shadow-sm">
+                    <img src="images/basket.jpg" class="card-img-top" alt="Palm Keychain">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">1. Palm leaf basket</h5>
+                        <p class="card-text">A basket is a container made from woven materials, typically used for carrying, storing, or organizing items.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 product-card">
+                <div class="card shadow-sm">
+                    <img src="images/basket1.jpg" class="card-img-top" alt="Palm Keychain">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">2. Palm leaf basket</h5>
+                        <p class="card-text">A basket is a versatile, handcrafted container that adds a rustic or natural touch to any setting.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 product-card">
+                <div class="card shadow-sm">
+                    <img src="images/basket2.jpg" class="card-img-top" alt="Palm Keychain">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">3. Palm leaf basket</h5>
+                        <p class="card-text">Baskets come in various shapes, sizes, and materials, from wicker to plastic, offering both style and functionality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 product-card">
+                <div class="card shadow-sm">
+                    <img src="images/basket3.jpg" class="card-img-top" alt="Palm Keychain">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">4. Palm leaf basket</h5>
+                        <p class="card-text">Whether for storage, decoration, or carrying goods, a basket serves both practical and aesthetic purposes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 product-card">
+                <div class="card shadow-sm">
+                    <img src="images/basket4.jpg" class="card-img-top" alt="Palm Keychain">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">5. Palm leaf basket</h5>
+                        <p class="card-text">Baskets are commonly used in picnics, shopping, and home organization due to their lightweight and durable design.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 product-card">
+                <div class="card shadow-sm">
+                    <img src="images/basket5.jpg" class="card-img-top" alt="Palm Keychain">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">6. Palm leaf basket</h5>
+                        <p class="card-text">From small, decorative baskets to large laundry bins, there’s a basket for every need.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 product-card">
+                <div class="card shadow-sm">
+                    <img src="images/basket6.jpg" class="card-img-top" alt="Palm Keychain">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">7. Palm leaf basket</h5>
+                        <p class="card-text">Baskets can be customized with different colors, patterns, and designs, making them ideal for gifts and crafts.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Add more products as needed, each wrapped in .product-card -->
+        </div>
+    </div>
+
+    <!-- Bootstrap and JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add animation effect when elements come into view
+        document.addEventListener("DOMContentLoaded", function() {
+            const productCards = document.querySelectorAll(".product-card");
+
+            const showProductCards = () => {
+                productCards.forEach(card => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight;
+
+                    if (cardPosition < screenPosition - 50) {
+                        card.classList.add("visible");
+                    }
+                });
+            };
+
+            // Run on page load
+            showProductCards();
+
+            // Run on scroll
+            window.addEventListener("scroll", showProductCards);
+        });
+    </script>
+</body>
+</html>
